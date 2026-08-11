@@ -205,7 +205,9 @@ img{max-width:100%;display:block}
 .life-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05)}
 .life-item{background:rgba(255,255,255,.03);padding:28px 16px;text-align:center;cursor:pointer;transition:var(--ease);border:1px solid transparent;-webkit-tap-highlight-color:transparent}
 .life-item:hover,.life-item:active{background:rgba(255,255,255,.09);border-color:rgba(201,168,76,.3);transform:translateY(-3px)}
-.life-icon{font-size:1.8rem;display:block;margin-bottom:12px}
+.life-icon{display:block;margin:0 auto 14px;width:30px;height:30px;color:var(--gold)}
+.life-icon svg{width:100%;height:100%;display:block}
+.award-icon svg{width:100%;height:100%;display:block}
 .life-name{font-family:var(--fd);font-size:.95rem;font-weight:600;color:var(--white);line-height:1.3}
 .life-sub{font-family:var(--fu);font-size:9px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:5px;display:block}
 
@@ -255,7 +257,7 @@ img{max-width:100%;display:block}
 .comm-tag-pill{display:inline-block;background:var(--off-white);padding:7px 18px;font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
 .highlights{display:grid;grid-template-columns:1fr;gap:12px;margin:28px 0}
 .hl{display:flex;align-items:flex-start;gap:14px;padding:18px;background:var(--off-white);border-left:3px solid var(--gold)}
-.hl-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.hl-icon{flex-shrink:0;margin-top:9px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
 .hl h4{font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--navy);margin-bottom:3px}
 .hl p{font-family:var(--fu);font-size:11px;font-weight:300;color:var(--gray);line-height:1.5;margin:0}
 .comm-sidebar{display:flex;flex-direction:column;gap:20px}
@@ -371,7 +373,7 @@ img{max-width:100%;display:block}
 .blog-search{position:relative;max-width:340px;width:100%}
 .blog-search input{width:100%;background:var(--off-white);border:1px solid var(--cream);border-bottom:2px solid var(--navy);padding:12px 16px 12px 40px;font-family:var(--fu);font-size:13px;color:var(--dark);outline:none;transition:var(--ease)}
 .blog-search input:focus{border-bottom-color:var(--gold);background:var(--white)}
-.blog-search::before{content:'🔍';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:13px;pointer-events:none}
+.blog-search::before{content:'';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:13px;pointer-events:none}
 
 /* Featured post */
 .blog-featured{position:relative;margin-bottom:40px;cursor:pointer;overflow:hidden;background:var(--navy)}
@@ -469,7 +471,7 @@ img{max-width:100%;display:block}
 .about-img{height:280px;background-size:cover;background-position:center}
 .awards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:48px;padding-bottom:56px}
 .award{text-align:center;padding:24px 14px;background:var(--off-white);border-top:3px solid var(--gold)}
-.award-icon{font-size:1.8rem;display:block;margin-bottom:10px}
+.award-icon{display:block;margin:0 auto 12px;width:26px;height:26px;color:var(--gold)}
 .award-text{font-family:var(--fu);font-size:11px;font-weight:600;color:var(--navy);letter-spacing:.5px;line-height:1.4}
 .award-yr{font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--gold);display:block;margin-top:5px}
 
@@ -650,7 +652,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 .lux-am-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .lux-am{display:flex;gap:14px;padding:18px;background:var(--off-white);border-left:3px solid var(--gold);transition:var(--ease)}
 .lux-am:hover{background:var(--cream);padding-left:22px}
-.lux-am-icon{font-size:1.6rem;line-height:1;flex-shrink:0}
+.lux-am-icon{flex-shrink:0;width:9px;height:9px;margin-top:8px;background:var(--gold);transform:rotate(45deg)}
 .lux-am h4{font-family:var(--fu);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-bottom:4px}
 .lux-am p{font-family:var(--fu);font-size:12px;font-weight:300;color:var(--gray);line-height:1.6}
 
@@ -803,7 +805,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <li><a href="#" onclick="showPage('about');return false" id="nav-about">About</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="tel:8439034400" class="nav-phone">📞 (843) 903-4400</a>
+        <a href="tel:8439034400" class="nav-phone">(843) 903-4400</a>
         <a href="#" class="btn btn-navy" onclick="showPage('home-value');return false">Free Home Value</a>
       </div>
       <!-- Mobile hamburger -->
@@ -837,11 +839,11 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <div class="mob-item">
     <button class="mob-btn" id="mob-life-btn" onclick="toggleMobSub('mob-life')">Lifestyle <span class="chev">▾</span></button>
     <div class="mob-sub" id="mob-life">
-      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('golf');closeMob();return false">⛳ Golf Communities</a>
-      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-condos');closeMob();return false">🌊 Oceanfront Condos</a>
-      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('resort');closeMob();return false">🏖️ Resort Communities</a>
-      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('icw');closeMob();return false">⚓ ICW Communities</a>
-      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-homes');closeMob();return false">🏠 Oceanfront Homes</a>
+      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('golf');closeMob();return false">Golf Communities</a>
+      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-condos');closeMob();return false">Oceanfront Condos</a>
+      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('resort');closeMob();return false">Resort Communities</a>
+      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('icw');closeMob();return false">ICW Communities</a>
+      <a href="#" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-homes');closeMob();return false">Oceanfront Homes</a>
     </div>
   </div>
   <div class="mob-item">
@@ -854,7 +856,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     <button class="mob-btn" onclick="showPage('about');closeMob()">About</button>
   </div>
   <div class="mob-cta">
-    <a href="tel:8439034400" class="mob-phone">📞 (843) 903-4400</a>
+    <a href="tel:8439034400" class="mob-phone">(843) 903-4400</a>
     <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');closeMob();return false">Get Free Home Value</a>
   </div>
 </div>
@@ -887,7 +889,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <div class="sf"><label>Property Type</label><select><option>Any Type</option><option>Single Family</option><option>Condo/Townhome</option><option>Waterfront</option><option>Oceanfront</option><option>Golf Community</option></select></div>
         <div class="sf"><label>Price Range</label><select><option>Any Price</option><option>Under $600K</option><option>$600K – $1M</option><option>$1M – $3M</option><option>$3M+</option></select></div>
         <div class="sf"><label>Bedrooms</label><select><option>Any</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select></div>
-        <button class="s-btn" onclick="submitSearch(this)">🔍 Search</button>
+        <button class="s-btn" onclick="submitSearch(this)">Search</button>
       </div>
     </div>
   </section>
@@ -952,11 +954,11 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     <div class="container">
       <div class="sec-header"><span class="lbl">Find Your Fit</span><h2 class="h2 light">Search by Lifestyle</h2></div>
       <div class="life-grid">
-        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('golf')"><span class="life-icon">⛳</span><div class="life-name">Golf Communities</div><span class="life-sub">100+ Courses</span></div>
-        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-condos')"><span class="life-icon">🌊</span><div class="life-name">Oceanfront Condos</div><span class="life-sub">Wake Up to the Ocean</span></div>
-        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('resort')"><span class="life-icon">🏖️</span><div class="life-name">Resort Communities</div><span class="life-sub">Amenity-Rich Living</span></div>
-        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('icw')"><span class="life-icon">⚓</span><div class="life-name">ICW Communities</div><span class="life-sub">Intracoastal Waterway</span></div>
-        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-homes')"><span class="life-icon">🏠</span><div class="life-name">Oceanfront Homes</div><span class="life-sub">Private Estates</span></div>
+        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('golf')"><span class="life-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 21V3l8 3.5-8 3.5"/><circle cx="7.5" cy="19.5" r="1.6"/></svg></span><div class="life-name">Golf Communities</div><span class="life-sub">100+ Courses</span></div>
+        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-condos')"><span class="life-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h9v13H3z"/><path d="M12 10h9v9h-9"/><path d="M6 9.5h3M6 13h3M15 13.5h3"/><path d="M2 21h20"/></svg></span><div class="life-name">Oceanfront Condos</div><span class="life-sub">Wake Up to the Ocean</span></div>
+        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('resort')"><span class="life-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M4.5 11a7.5 7.5 0 0 1 15 0z"/><path d="M2 20.5c1.6-1.2 3.2-1.2 4.8 0s3.2 1.2 4.8 0 3.2-1.2 4.8 0 3.2 1.2 4.8 0"/></svg></span><div class="life-name">Resort Communities</div><span class="life-sub">Amenity-Rich Living</span></div>
+        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('icw')"><span class="life-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><path d="M12 6.5V20"/><path d="M7.5 9.5h9"/><path d="M4 14.5a8 8 0 0 0 16 0"/></svg></span><div class="life-name">ICW Communities</div><span class="life-sub">Intracoastal Waterway</span></div>
+        <div class="life-item" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-homes')"><span class="life-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5.5 12v8h13v-8"/><path d="M10 20v-5h4v5"/></svg></span><div class="life-name">Oceanfront Homes</div><span class="life-sub">Private Estates</span></div>
       </div>
     </div>
   </section>
@@ -1113,18 +1115,18 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <div class="ls-subnav">
     <div class="container" style="padding:0">
       <div class="ls-tabs">
-        <button class="ls-tab active" id="tab-golf" onclick="setLifestyleTab('golf')">⛳ Golf</button>
-        <button class="ls-tab" id="tab-oceanfront-condos" onclick="setLifestyleTab('oceanfront-condos')">🌊 Ocean Condos</button>
-        <button class="ls-tab" id="tab-resort" onclick="setLifestyleTab('resort')">🏖️ Resort</button>
-        <button class="ls-tab" id="tab-icw" onclick="setLifestyleTab('icw')">⚓ Waterway</button>
-        <button class="ls-tab" id="tab-oceanfront-homes" onclick="setLifestyleTab('oceanfront-homes')">🏠 Ocean Homes</button>
+        <button class="ls-tab active" id="tab-golf" onclick="setLifestyleTab('golf')">Golf</button>
+        <button class="ls-tab" id="tab-oceanfront-condos" onclick="setLifestyleTab('oceanfront-condos')">Ocean Condos</button>
+        <button class="ls-tab" id="tab-resort" onclick="setLifestyleTab('resort')">Resort</button>
+        <button class="ls-tab" id="tab-icw" onclick="setLifestyleTab('icw')">Waterway</button>
+        <button class="ls-tab" id="tab-oceanfront-homes" onclick="setLifestyleTab('oceanfront-homes')">Ocean Homes</button>
       </div>
     </div>
   </div>
 
   <!-- Each lifestyle section -->
   <div id="ls-golf">
-    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/long-bay-2.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Golf Communities</h2><p>With over 100 courses woven through coastal live oaks and marshlands, the Grand Strand is one of the premier golf destinations in the world. Live where you play.</p><a href="#" class="btn btn-outline" onclick="this.closest('.ls-cat').nextElementSibling.scrollIntoView({behavior:'smooth'});return false">View All Golf Properties</a></div></div></div><div class="ls-stats"><div class="ls-stat"><span class="ls-stat-icon">⛳</span><span class="ls-stat-n">100+</span><span class="ls-stat-l">Golf Courses</span></div><div class="ls-stat"><span class="ls-stat-icon">🏆</span><span class="ls-stat-n">14</span><span class="ls-stat-l">Championship Courses</span></div><div class="ls-stat"><span class="ls-stat-icon">🌅</span><span class="ls-stat-n">60 mi</span><span class="ls-stat-l">Coastline</span></div><div class="ls-stat"><span class="ls-stat-icon">☀️</span><span class="ls-stat-n">215</span><span class="ls-stat-l">Sunny Days/Year</span></div></div></div></div>
+    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/long-bay-2.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Golf Communities</h2><p>With over 100 courses woven through coastal live oaks and marshlands, the Grand Strand is one of the premier golf destinations in the world. Live where you play.</p><a href="#" class="btn btn-outline" onclick="this.closest('.ls-cat').nextElementSibling.scrollIntoView({behavior:'smooth'});return false">View All Golf Properties</a></div></div></div><div class="ls-stats"><div class="ls-stat"><span class="ls-stat-icon"></span><span class="ls-stat-n">100+</span><span class="ls-stat-l">Golf Courses</span></div><div class="ls-stat"><span class="ls-stat-icon"></span><span class="ls-stat-n">14</span><span class="ls-stat-l">Championship Courses</span></div><div class="ls-stat"><span class="ls-stat-icon"></span><span class="ls-stat-n">60 mi</span><span class="ls-stat-l">Coastline</span></div><div class="ls-stat"><span class="ls-stat-icon"></span><span class="ls-stat-n">215</span><span class="ls-stat-l">Sunny Days/Year</span></div></div></div></div>
     <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Golf Community Properties</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('images/long-bay-1.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Entry Luxury</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Beautifully appointed golf course homes with premium finishes, private pools, and effortless access to championship play.</p><button class="tier-cta-btn" onclick="openTier(this)">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('images/long-bay-2.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Premier Collection</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Exceptional fairway estates with custom architecture, resort-style outdoor living, and coveted addresses in the Grand Strand's finest gated golf communities.</p><button class="tier-cta-btn" onclick="openTier(this)">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('images/barefoot-pool.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Ultra Luxury</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Rare trophy properties commanding the finest fairway frontage — available only to the most discerning buyers.</p><button class="tier-cta-btn" onclick="openTier(this)">Request Private Access →</button></div></div></div></div></section>
   </div>
 
@@ -1175,7 +1177,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   </div>
   <div class="hv-form" id="hvSuccess" style="display:none">
     <div class="lm-success" style="padding:30px 4px 50px">
-      <div class="lm-check">✓</div>
+      <div class="lm-check"></div>
       <h4>Request Received</h4>
       <p>Thank you — one of our Grand Strand experts is preparing your complimentary market valuation. Expect it in your inbox within 24 hours, along with recent comparable sales in your community.</p>
     </div>
@@ -1249,19 +1251,19 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       <div class="container">
         <!-- Admin Tabs -->
         <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:28px;border-bottom:2px solid var(--cream);padding-bottom:4px">
-          <button class="blog-cat-btn active" onclick="switchAdminTab('blog',this)">📝 Blog</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('openhouses',this)">🏡 Open Houses</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('listings',this)">🏠 Listings</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('hero',this)">🖼️ Hero Slides</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('agents',this)">👤 Agents</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('testimonials',this)">💬 Testimonials</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('communities',this)">🗺️ Communities</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('settings',this)">⚙️ Settings</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('intro',this)">🏠 Intro</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('about',this)">📄 About</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('cta',this)">📢 CTA</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('footer',this)">🦶 Footer</button>
-          <button class="blog-cat-btn" onclick="switchAdminTab('commpages',this)">📍 Community Pages</button>
+          <button class="blog-cat-btn active" onclick="switchAdminTab('blog',this)">Blog</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('openhouses',this)">Open Houses</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('listings',this)">Listings</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('hero',this)">Hero Slides</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('agents',this)">Agents</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('testimonials',this)">Testimonials</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('communities',this)">Communities</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('settings',this)">Settings</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('intro',this)">Intro</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('about',this)">About</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('cta',this)">CTA</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('footer',this)">Footer</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('commpages',this)">Community Pages</button>
           <div style="flex:1"></div>
           <span class="admin-user" id="adminUserEmail" style="align-self:center"></span>
           <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream);padding:8px 16px;font-size:10px" onclick="adminSignOut()">Sign Out</button>
@@ -1270,7 +1272,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Blog Posts -->
         <div class="admin-tab" id="adminTab-blog">
           <div class="admin-bar">
-            <h2>📝 Blog Posts</h2>
+            <h2>Blog Posts</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openEditor()">+ New Post</button>
             </div>
@@ -1281,7 +1283,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Open Houses -->
         <div class="admin-tab" id="adminTab-openhouses" style="display:none">
           <div class="admin-bar">
-            <h2>🏡 Open Houses</h2>
+            <h2>Open Houses</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openOHEditor()">+ Add Open House</button>
             </div>
@@ -1292,7 +1294,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Listings -->
         <div class="admin-tab" id="adminTab-listings" style="display:none">
           <div class="admin-bar">
-            <h2>🏠 Featured Listings</h2>
+            <h2>Featured Listings</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openListingEditor()">+ Add Listing</button>
             </div>
@@ -1303,7 +1305,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Hero Slides -->
         <div class="admin-tab" id="adminTab-hero" style="display:none">
           <div class="admin-bar">
-            <h2>🖼️ Hero Slideshow</h2>
+            <h2>Hero Slideshow</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openHeroEditor()">+ Add Slide</button>
             </div>
@@ -1314,7 +1316,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Agents -->
         <div class="admin-tab" id="adminTab-agents" style="display:none">
           <div class="admin-bar">
-            <h2>👤 Agent Profiles</h2>
+            <h2>Agent Profiles</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openAgentEditor()">+ Add Agent</button>
             </div>
@@ -1325,7 +1327,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Testimonials -->
         <div class="admin-tab" id="adminTab-testimonials" style="display:none">
           <div class="admin-bar">
-            <h2>💬 Testimonials</h2>
+            <h2>Testimonials</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openTestEditor()">+ Add Testimonial</button>
             </div>
@@ -1336,7 +1338,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <!-- TAB: Featured Communities -->
         <div class="admin-tab" id="adminTab-communities" style="display:none">
           <div class="admin-bar">
-            <h2>🗺️ Featured Communities</h2>
+            <h2>Featured Communities</h2>
             <div class="admin-bar-actions">
               <button class="btn btn-gold" onclick="openCommEditor()">+ Add Community</button>
             </div>
@@ -1346,7 +1348,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
         <!-- TAB: Site Settings -->
         <div class="admin-tab" id="adminTab-settings" style="display:none">
-          <div class="admin-bar"><h2>⚙️ Site Settings</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveSettings()">Save Settings</button></div></div>
+          <div class="admin-bar"><h2>Site Settings</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveSettings()">Save Settings</button></div></div>
           <div class="editor-wrap">
             <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
               <div class="fg"><label>Phone Number</label><input type="text" id="setPhone" placeholder="(843) 903-4400"></div>
@@ -1367,7 +1369,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
         <!-- TAB: Homepage Intro -->
         <div class="admin-tab" id="adminTab-intro" style="display:none">
-          <div class="admin-bar"><h2>🏠 Homepage Intro</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveIntro()">Save Intro</button></div></div>
+          <div class="admin-bar"><h2>Homepage Intro</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveIntro()">Save Intro</button></div></div>
           <div class="editor-wrap">
             <div class="fg"><label>Section Label</label><input type="text" id="introLabel" placeholder="Welcome to the Grand Strand"></div>
             <div class="fg"><label>Headline</label><input type="text" id="introHead" placeholder="Life Is Better By the Water"></div>
@@ -1389,7 +1391,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
         <!-- TAB: About Page -->
         <div class="admin-tab" id="adminTab-about" style="display:none">
-          <div class="admin-bar"><h2>📄 About Page</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveAbout()">Save About</button></div></div>
+          <div class="admin-bar"><h2>About Page</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveAbout()">Save About</button></div></div>
           <div class="editor-wrap">
             <div class="fg"><label>Hero Headline (use &lt;em&gt; for gold italic)</label><input type="text" id="aboutHead" placeholder='Local Roots. <em>Global Reach.</em>'></div>
             <div class="fg"><label>Section Label</label><input type="text" id="aboutLabel" placeholder="Who We Are"></div>
@@ -1400,30 +1402,30 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
               <label>Team Photo</label>
               <div style="display:flex;gap:8px;align-items:flex-start">
                 <input type="text" id="aboutImage" placeholder="images/photo.jpg or full URL" style="flex:1">
-                <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'aboutImage')" style="display:none"></label>
+                <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">Upload<input type="file" accept="image/*" onchange="uploadToField(this,'aboutImage')" style="display:none"></label>
               </div>
             </div>
             <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--cream)"><label style="font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--navy);display:block;margin-bottom:14px">Awards (up to 4)</label></div>
             <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
-              <div class="fg"><label>Award 1 Icon</label><input type="text" id="aw1Icon" placeholder="🏆"></div>
+              <div class="fg"><label>Award 1 Icon</label><input type="text" id="aw1Icon" placeholder=""></div>
               <div class="fg"><label>Award 1 Text</label><input type="text" id="aw1Text" placeholder="Diamond Society Top Producer"></div>
               <div class="fg"><label>Award 1 Year</label><input type="text" id="aw1Year" placeholder="2024"></div>
               <div></div>
             </div>
             <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
-              <div class="fg"><label>Award 2 Icon</label><input type="text" id="aw2Icon" placeholder="⭐"></div>
+              <div class="fg"><label>Award 2 Icon</label><input type="text" id="aw2Icon" placeholder=""></div>
               <div class="fg"><label>Award 2 Text</label><input type="text" id="aw2Text" placeholder="Five Star Award Winner"></div>
               <div class="fg"><label>Award 2 Year</label><input type="text" id="aw2Year" placeholder="8 Years"></div>
               <div></div>
             </div>
             <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
-              <div class="fg"><label>Award 3 Icon</label><input type="text" id="aw3Icon" placeholder="📈"></div>
+              <div class="fg"><label>Award 3 Icon</label><input type="text" id="aw3Icon" placeholder=""></div>
               <div class="fg"><label>Award 3 Text</label><input type="text" id="aw3Text" placeholder="Top 1% Grand Strand"></div>
               <div class="fg"><label>Award 3 Year</label><input type="text" id="aw3Year" placeholder="2019–2025"></div>
               <div></div>
             </div>
             <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
-              <div class="fg"><label>Award 4 Icon</label><input type="text" id="aw4Icon" placeholder="🤝"></div>
+              <div class="fg"><label>Award 4 Icon</label><input type="text" id="aw4Icon" placeholder=""></div>
               <div class="fg"><label>Award 4 Text</label><input type="text" id="aw4Text" placeholder="Certified Luxury Home Marketing"></div>
               <div class="fg"><label>Award 4 Year</label><input type="text" id="aw4Year" placeholder="CLHMS"></div>
               <div></div>
@@ -1434,7 +1436,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
         <!-- TAB: Home Value CTA -->
         <div class="admin-tab" id="adminTab-cta" style="display:none">
-          <div class="admin-bar"><h2>📢 Home Value CTA Banner</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveCTA()">Save CTA</button></div></div>
+          <div class="admin-bar"><h2>Home Value CTA Banner</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveCTA()">Save CTA</button></div></div>
           <div class="editor-wrap">
             <div class="fg"><label>Headline</label><input type="text" id="ctaHead" placeholder="Curious What Your Home Is Worth?"></div>
             <div class="fg"><label>Description</label><textarea id="ctaDesc" rows="2" placeholder="Get a complimentary valuation..."></textarea></div>
@@ -1446,7 +1448,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
         <!-- TAB: Footer -->
         <div class="admin-tab" id="adminTab-footer" style="display:none">
-          <div class="admin-bar"><h2>🦶 Footer Content</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveFooter()">Save Footer</button></div></div>
+          <div class="admin-bar"><h2>Footer Content</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveFooter()">Save Footer</button></div></div>
           <div class="editor-wrap">
             <div class="fg"><label>Brand Description</label><textarea id="footDesc" rows="3" placeholder="Short brand description for footer..."></textarea></div>
             <div class="fg"><label>Copyright Text</label><input type="text" id="footCopy" placeholder="© 2026 Coldwell Banker Sea Coast Advantage..."></div>
@@ -1456,7 +1458,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
         <!-- TAB: Community Pages -->
         <div class="admin-tab" id="adminTab-commpages" style="display:none">
-          <div class="admin-bar"><h2>📍 Community Page Content</h2><div class="admin-bar-actions"><span style="font-family:var(--fu);font-size:11px;color:var(--gray)">Edit each community's landing page content</span></div></div>
+          <div class="admin-bar"><h2>Community Page Content</h2><div class="admin-bar-actions"><span style="font-family:var(--fu);font-size:11px;color:var(--gray)">Edit each community's landing page content</span></div></div>
           <div class="admin-posts-list" id="adminCommPagesList"></div>
         </div>
       </div>
@@ -1480,7 +1482,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <label>Hero Background Image</label>
         <div style="display:flex;gap:8px;align-items:flex-start">
           <input type="text" id="cpImage" placeholder="images/photo.jpg or full URL" style="flex:1">
-          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'cpImage')" style="display:none"></label>
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">Upload<input type="file" accept="image/*" onchange="uploadToField(this,'cpImage')" style="display:none"></label>
         </div>
       </div>
       <div class="fg"><label>Intro Paragraph</label><textarea id="cpIntro" rows="5" placeholder="Main community description..."></textarea></div>
@@ -1521,7 +1523,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
               <div style="display:flex;gap:8px;align-items:flex-start">
                 <input type="text" id="postImage" placeholder="images/your-image.jpg or full URL" style="flex:1">
                 <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">
-                  📷 Upload
+                   Upload
                   <input type="file" id="postImageUpload" accept="image/*" onchange="uploadBlogImage(this)" style="display:none">
                 </label>
               </div>
@@ -1543,8 +1545,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
               <button onclick="execFmt('formatBlock','P')" title="Paragraph">P</button>
               <button onclick="execFmt('insertUnorderedList')" title="Bullet List">• List</button>
               <button onclick="execFmt('insertOrderedList')" title="Numbered List">1. List</button>
-              <button onclick="execFmt('formatBlock','BLOCKQUOTE')" title="Quote">❝ Quote</button>
-              <button onclick="document.getElementById('bodyImageUpload').click()" title="Insert Image">📷 Image</button>
+              <button onclick="execFmt('formatBlock','BLOCKQUOTE')" title="Quote">Quote</button>
+              <button onclick="document.getElementById('bodyImageUpload').click()" title="Insert Image">Image</button>
               <input type="file" id="bodyImageUpload" accept="image/*" onchange="uploadBodyImage(this)" style="display:none">
             </div>
             <div class="editor-body" id="postBody" contenteditable="true"></div>
@@ -1604,13 +1606,13 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <div class="fg"><label>Beds</label><input type="text" id="listBeds" placeholder="4"></div>
         <div class="fg"><label>Baths</label><input type="text" id="listBaths" placeholder="3.5"></div>
         <div class="fg"><label>Sq Ft</label><input type="text" id="listSqft" placeholder="3,240"></div>
-        <div class="fg"><label>Feature Icon</label><input type="text" id="listFeature" placeholder="🚤 Dock"></div>
+        <div class="fg"><label>Feature Icon</label><input type="text" id="listFeature" placeholder=" Dock"></div>
       </div>
       <div class="fg">
         <label>Photo</label>
         <div style="display:flex;gap:8px;align-items:flex-start">
           <input type="text" id="listImage" placeholder="images/photo.jpg or full URL" style="flex:1">
-          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'listImage')" style="display:none"></label>
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">Upload<input type="file" accept="image/*" onchange="uploadToField(this,'listImage')" style="display:none"></label>
         </div>
       </div>
       <div class="fg"><label>MLS Link (optional)</label><input type="text" id="listLink" placeholder="https://..."></div>
@@ -1634,7 +1636,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <label>Background Image</label>
         <div style="display:flex;gap:8px;align-items:flex-start">
           <input type="text" id="heroImage" placeholder="images/photo.jpg or full URL" style="flex:1">
-          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'heroImage')" style="display:none"></label>
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">Upload<input type="file" accept="image/*" onchange="uploadToField(this,'heroImage')" style="display:none"></label>
         </div>
       </div>
       <div class="fg"><label>Badge Text</label><input type="text" id="heroBadge" placeholder="Your Grand Strand Experts"></div>
@@ -1676,7 +1678,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <label>Photo</label>
         <div style="display:flex;gap:8px;align-items:flex-start">
           <input type="text" id="agentImage" placeholder="images/photo.jpg or full URL" style="flex:1">
-          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'agentImage')" style="display:none"></label>
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">Upload<input type="file" accept="image/*" onchange="uploadToField(this,'agentImage')" style="display:none"></label>
         </div>
       </div>
       <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
@@ -1742,7 +1744,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <label>Background Image</label>
         <div style="display:flex;gap:8px;align-items:flex-start">
           <input type="text" id="commImage" placeholder="images/photo.jpg or full URL" style="flex:1">
-          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'commImage')" style="display:none"></label>
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">Upload<input type="file" accept="image/*" onchange="uploadToField(this,'commImage')" style="display:none"></label>
         </div>
       </div>
       <label class="editor-check"><input type="checkbox" id="commLarge"> Large card (spans two columns)</label>
@@ -1781,10 +1783,10 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <div class="about-img" id="aboutImgEl" style="background-image:url('images/nmb-main-street.jpg')"></div>
       </div>
       <div class="awards" id="awardsEl">
-        <div class="award"><span class="award-icon">🏆</span><div class="award-text">Diamond Society<br>Top Producer</div><span class="award-yr">2024</span></div>
-        <div class="award"><span class="award-icon">⭐</span><div class="award-text">Five Star Real Estate<br>Award Winner</div><span class="award-yr">8 Years</span></div>
-        <div class="award"><span class="award-icon">📈</span><div class="award-text">Top 1% Grand Strand<br>Agents by Volume</div><span class="award-yr">2019–2025</span></div>
-        <div class="award"><span class="award-icon">🤝</span><div class="award-text">Certified Luxury<br>Home Marketing</div><span class="award-yr">CLHMS</span></div>
+        <div class="award"><span class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7a3.5 3.5 0 0 0 3 3.4M17 5.5h2.5V7a3.5 3.5 0 0 1-3 3.4"/><path d="M12 14v3.5M9 20.5h6"/></svg></span><div class="award-text">Diamond Society<br>Top Producer</div><span class="award-yr">2024</span></div>
+        <div class="award"><span class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.9-5.3-2.9-5.3 2.9 1.1-5.9L3.5 9.7l5.9-.8z"/></svg></span><div class="award-text">Five Star Real Estate<br>Award Winner</div><span class="award-yr">8 Years</span></div>
+        <div class="award"><span class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5V4"/><path d="M3.5 20.5H21"/><path d="m7 16 4-4.5 3.5 2.5L20 7"/><path d="M16.5 7H20v3.5"/></svg></span><div class="award-text">Top 1% Grand Strand<br>Agents by Volume</div><span class="award-yr">2019–2025</span></div>
+        <div class="award"><span class="award-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.3-7.5-9.7A4.3 4.3 0 0 1 12 8.6a4.3 4.3 0 0 1 7.5 2.7C19.5 16.7 12 21 12 21z"/></svg></span><div class="award-text">Certified Luxury<br>Home Marketing</div><span class="award-yr">CLHMS</span></div>
       </div>
     </div>
   </div>
@@ -1800,7 +1802,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <span class="ls">Coldwell Banker · Myrtle Beach &amp; Grand Strand</span>
         <p id="footDescEl">Serving the Grand Strand and North Strand communities of South Carolina with integrity, expertise, and a genuine love for this coast.</p>
         <p style="margin-top:8px">Licensed in South Carolina · Equal Housing Opportunity</p>
-        <div class="foot-social" id="footSocialEl"><div class="soc">f</div><div class="soc">in</div><div class="soc">▶</div><div class="soc">📸</div></div>
+        <div class="foot-social" id="footSocialEl"><div class="soc">f</div><div class="soc">in</div><div class="soc">▶</div><div class="soc">ig</div></div>
       </div>
       <div class="foot-col">
         <h4>Communities</h4>
@@ -1965,7 +1967,7 @@ function showPage(p){
 /* ── Community pages ── */
 function showCommunity(slug){
   const d=C[slug]; if(!d)return;
-  const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon">${h.i}</div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
+  const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon"></div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
   document.getElementById('commContent').innerHTML=`
     <div class="comm-hero" style="background-image:url('${d.bg}')">
       <div class="comm-hero-body">
@@ -3340,7 +3342,7 @@ function luxuryCardsHTML(){
 /* ── Render luxury community landing page ── */
 function showLuxuryCommunity(slug){
   const d=LC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -3452,7 +3454,7 @@ function nmbLuxuryCardsHTML(){
 /* ── Render NMB luxury community landing page ── */
 function showNMBLuxuryCommunity(slug){
   const d=NLC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -3566,7 +3568,7 @@ function lrLuxuryCardsHTML(){
 /* ── Render Little River luxury community landing page ── */
 function showLRLuxuryCommunity(slug){
   const d=LRC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -3678,7 +3680,7 @@ function conwayLuxuryCardsHTML(){
 
 function showConwayLuxuryCommunity(slug){
   const d=CWC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -3786,7 +3788,7 @@ function mbLuxuryCardsHTML(){
 
 function showMbLuxuryCommunity(slug){
   const d=MBC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -3894,7 +3896,7 @@ function miLuxuryCardsHTML(){
 
 function showMiLuxuryCommunity(slug){
   const d=MIC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -4002,7 +4004,7 @@ function sbLuxuryCardsHTML(){
 
 function showSbLuxuryCommunity(slug){
   const d=SBC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -4110,7 +4112,7 @@ function gcLuxuryCardsHTML(){
 
 function showGcLuxuryCommunity(slug){
   const d=GCC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -4218,7 +4220,7 @@ function lbLuxuryCardsHTML(){
 
 function showLbLuxuryCommunity(slug){
   const d=LBC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -4326,7 +4328,7 @@ function piLuxuryCardsHTML(){
 
 function showPiLuxuryCommunity(slug){
   const d=PIC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon"></div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
@@ -4648,7 +4650,7 @@ function renderFeaturedCard(p){
   return `<div class="blog-featured" onclick="showBlogPost('${p.id}')">
     <div class="blog-featured-img" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div>
     <div class="blog-featured-body">
-      <div class="blog-featured-pin">★ Featured</div>
+      <div class="blog-featured-pin">Featured</div>
       <span class="b-cat">${p.category||''}</span>
       <div class="b-title">${p.title}</div>
       <p class="b-exc">${p.excerpt||''}</p>
@@ -4698,7 +4700,7 @@ function showBlogPost(id){
       <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank" rel="noopener" title="Share on Facebook">f</a>
       <a class="share-btn" href="https://twitter.com/intent/tweet?url=${url}&text=${title}" target="_blank" rel="noopener" title="Share on X">𝕏</a>
       <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=${url}" target="_blank" rel="noopener" title="Share on LinkedIn">in</a>
-      <button class="share-btn" onclick="copyPostLink()" title="Copy link">🔗</button>
+      <button class="share-btn" onclick="copyPostLink()" title="Copy link">Copy link</button>
     </div>`;
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -4799,7 +4801,7 @@ async function loadAdminPosts(){
       const date=p.date?.toDate?p.date.toDate():new Date(p.date);
       const dateStr=date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
       return `<div class="admin-post-row">
-        <div><div class="title">${p.title}</div><div class="meta">${p.category} · ${dateStr}${p.pinned?' · <span class="pinned">★ Pinned</span>':''}</div></div>
+        <div><div class="title">${p.title}</div><div class="meta">${p.category} · ${dateStr}${p.pinned?' · <span class="pinned">Pinned</span>':''}</div></div>
         <div class="admin-post-actions">
           <button onclick="editPost('${d.id}')">Edit</button>
           <button class="del" onclick="deletePost('${d.id}','${p.title.replace(/'/g,"\\'")}')">Delete</button>
@@ -5127,8 +5129,8 @@ async function loadAgents(){
   try{
     const snap=await db.collection('agents').orderBy('order').get();
     const grid=document.getElementById('agentsGrid');
-    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">Agent profiles coming soon.</p>';return;}
-    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="agent-card"><div class="agent-photo" style="background-image:url('${p.image||'images/nmb-sign.jpg'}');background-size:cover;background-position:center top"></div><div class="agent-body"><div class="agent-name">${p.name}</div><span class="agent-title">${p.title||''}</span><p class="agent-bio">${p.bio||''}</p><div class="agent-links">${p.phone?'<a href="tel:'+p.phone.replace(/\D/g,'')+'">📞 '+p.phone+'</a>':''}${p.email?'<a href="mailto:'+p.email+'">✉️ '+p.email+'</a>':''}</div></div></div>`;}).join('');
+    if(snap.empty){grid.innerHTML='';hideEmptySections();return;}
+    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="agent-card"><div class="agent-photo" style="background-image:url('${p.image||'images/nmb-sign.jpg'}');background-size:cover;background-position:center top"></div><div class="agent-body"><div class="agent-name">${p.name}</div><span class="agent-title">${p.title||''}</span><p class="agent-bio">${p.bio||''}</p><div class="agent-links">${p.phone?'<a href="tel:'+p.phone.replace(/\D/g,'')+'">'+p.phone+'</a>':''}${p.email?'<a href="mailto:'+p.email+'">'+p.email+'</a>':''}</div></div></div>`;}).join('');
   }catch(e){console.error('Agents load error:',e);}
 }
 
@@ -5160,7 +5162,7 @@ async function loadTestimonials(){
   try{
     const snap=await db.collection('testimonials').orderBy('order').get();
     const grid=document.getElementById('testGrid');
-    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">Client testimonials coming soon.</p>';return;}
+    if(snap.empty){grid.innerHTML='';hideEmptySections();return;}
     grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="test-card"><p class="test-text">${p.quote}</p><div class="test-author">${p.author}</div><span class="test-loc">${p.location||''}</span></div>`;}).join('');
   }catch(e){console.error('Testimonials load error:',e);}
 }
@@ -5174,7 +5176,7 @@ async function loadAdminComm(){
     const snap=await db.collection('featured_communities').orderBy('order').get();
     const list=document.getElementById('adminCommList');
     if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No featured communities yet.</p>';return;}
-    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.name}</div><div class="meta">${p.tag||''} · ${p.slug} ${p.large?'· <span class="pinned">★ Large</span>':''}</div></div><div class="admin-post-actions"><button onclick="editComm('${d.id}')">Edit</button><button class="del" onclick="deleteComm('${d.id}','${p.name.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.name}</div><div class="meta">${p.tag||''} · ${p.slug} ${p.large?'· <span class="pinned">Large</span>':''}</div></div><div class="admin-post-actions"><button onclick="editComm('${d.id}')">Edit</button><button class="del" onclick="deleteComm('${d.id}','${p.name.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
   }catch(e){console.error(e);}
 }
 function openCommEditor(id){editingCommId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminCommEditor').style.display='block';document.getElementById('commEditorTitle').textContent=id?'Edit Community':'New Featured Community';document.getElementById('commEditorError').style.display='none';if(!id){['commName','commTag','commImage'].forEach(f=>document.getElementById(f).value='');document.getElementById('commSlug').value='little-river';document.getElementById('commLarge').checked=false;document.getElementById('commOrder').value='0';}}
@@ -5220,7 +5222,7 @@ async function loadSettings(){
     const doc=await db.collection('site_config').doc('settings').get();
     if(!doc.exists)return;const d=doc.data();
     // Apply to all phone/email instances
-    document.querySelectorAll('a[href^="tel:"]').forEach(a=>{if(d.phone){a.href='tel:'+d.phone.replace(/\D/g,'');a.textContent=a.textContent.includes('📞')?'📞 '+d.phone:d.phone;}});
+    document.querySelectorAll('a[href^="tel:"]').forEach(a=>{if(d.phone){a.href='tel:'+d.phone.replace(/\D/g,'');a.textContent=d.phone;}});
     if(d.location){const loc=document.querySelector('.tb-loc');if(loc)loc.textContent=' · '+d.location;}
     // Social links
     if(d.fb||d.ig||d.li||d.yt){
@@ -5229,7 +5231,7 @@ async function loadSettings(){
         (d.fb?`<a href="${d.fb}" target="_blank" rel="noopener" class="soc">f</a>`:'<div class="soc">f</div>')+
         (d.li?`<a href="${d.li}" target="_blank" rel="noopener" class="soc">in</a>`:'<div class="soc">in</div>')+
         (d.yt?`<a href="${d.yt}" target="_blank" rel="noopener" class="soc">▶</a>`:'<div class="soc">▶</div>')+
-        (d.ig?`<a href="${d.ig}" target="_blank" rel="noopener" class="soc">📸</a>`:'<div class="soc">📸</div>');
+        (d.ig?`<a href="${d.ig}" target="_blank" rel="noopener" class="soc">ig</a>`:'<div class="soc">ig</div>');
     }
   }catch(e){console.error('Settings load error:',e);}
 }
@@ -5360,7 +5362,7 @@ async function loadAdminCommPages(){
     const name=C[slug]?C[slug].name:slug;
     let hasFirestore=false;
     try{const doc=await db.collection('community_data').doc(slug).get();hasFirestore=doc.exists;}catch(e){}
-    html+=`<div class="admin-post-row"><div><div class="title">${name}</div><div class="meta">${slug} ${hasFirestore?'· <span class="pinned">✓ Customized</span>':'· Using default content'}</div></div><div class="admin-post-actions"><button onclick="editCommPage('${slug}')">${hasFirestore?'Edit':'Customize'}</button>${hasFirestore?'<button class="del" onclick="resetCommPage(\''+slug+'\',\''+name.replace(/'/g,"\\'")+'\')">Reset</button>':''}</div></div>`;
+    html+=`<div class="admin-post-row"><div><div class="title">${name}</div><div class="meta">${slug} ${hasFirestore?'· <span class="pinned">Customized</span>':'· Using default content'}</div></div><div class="admin-post-actions"><button onclick="editCommPage('${slug}')">${hasFirestore?'Edit':'Customize'}</button>${hasFirestore?'<button class="del" onclick="resetCommPage(\''+slug+'\',\''+name.replace(/'/g,"\\'")+'\')">Reset</button>':''}</div></div>`;
   }
   list.innerHTML=html;
 }
@@ -5451,7 +5453,7 @@ showCommunity=async function(slug){
 
   if(d){
     // Use Firestore data — render directly
-    const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon">${h.i}</div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
+    const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon"></div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
     document.getElementById('commContent').innerHTML=`
       <div class="comm-hero" style="background-image:url('${d.bg}')">
         <div class="comm-hero-body">
