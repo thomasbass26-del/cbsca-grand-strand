@@ -1914,7 +1914,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       </div>
     </div>
     <div class="foot-bottom">
-      <p id="footCopyEl">© 2026 Coldwell Banker Sea Coast Advantage · All Rights Reserved · SC License #12345</p>
+      <p id="footCopyEl">© 2026 Coldwell Banker Sea Coast Advantage · All Rights Reserved · Licensed in South Carolina</p>
       <span><a href="#" onclick="showPage('admin');return false" style="color:rgba(255,255,255,.15);transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.4)'" onmouseout="this.style.color='rgba(255,255,255,.15)'">Admin</a> · Coldwell Banker ®</span>
     </div>
   </div>
@@ -4582,7 +4582,10 @@ let editingPostId=null;
 async function loadBlogPosts(){
   try{
     const snap=await db.collection('blog_posts').orderBy('date','desc').get();
-    blogPosts=snap.docs.map(d=>({id:d.id,...d.data()}));
+    /* TEMPORARY (added Aug 10, 2026): hides leftover placeholder posts titled
+       "Test" so they cannot surface publicly. DELETE those two documents in
+       Site Manager, then remove this .filter() line. */
+    blogPosts=snap.docs.map(d=>({id:d.id,...d.data()})).filter(p=>(p.title||'').trim().toLowerCase()!=='test');
     blogDisplayCount=9;
     applyBlogFilters();
   }catch(e){console.error('Blog load error:',e);
@@ -4977,7 +4980,7 @@ async function loadOpenHouses(){
   try{
     const snap=await db.collection('open_houses').orderBy('order').get();
     const grid=document.getElementById('ohGrid');
-    if(snap.empty){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;font-family:var(--fb);color:rgba(255,255,255,.5)">No open houses scheduled. Check back soon!</div>';return;}
+    if(snap.empty){grid.innerHTML='';hideEmptySections();return;}
     grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="oh-card"><div class="oh-day">${p.day}</div><div class="oh-addr">${p.address}</div><div class="oh-details">${p.details}</div><div class="oh-bottom"><span class="oh-price">${p.price}</span><span class="oh-time-pill">${p.time}</span></div></div>`;}).join('');
   }catch(e){console.error('OH load error:',e);}
 }
@@ -5011,7 +5014,7 @@ async function loadListings(){
   try{
     const snap=await db.collection('listings').orderBy('order').get();
     const grid=document.getElementById('listGrid');
-    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">No listings available. Check back soon!</p>';return;}
+    if(snap.empty){grid.innerHTML='';hideEmptySections();return;}
     grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="listing"${p.link?' onclick="window.open(\''+p.link+'\',\'_blank\')"':''}><div class="l-photo"><div class="l-bg" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div>${p.badge?'<div class="l-badge">'+p.badge+'</div>':''}</div><div class="l-info"><div class="l-price">${p.price}</div><div class="l-addr">${p.address}</div><div class="l-loc">${p.location||''}</div><div class="l-specs"><div><span class="ls-v">${p.beds||''}</span><span class="ls-l">Beds</span></div><div><span class="ls-v">${p.baths||''}</span><span class="ls-l">Baths</span></div><div><span class="ls-v">${p.sqft||''}</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">${p.featureIcon||''}</span><span class="ls-l">${p.featureLabel||''}</span></div></div></div></div>`;}).join('');
   }catch(e){console.error('Listings load error:',e);}
 }
@@ -5185,14 +5188,28 @@ async function saveComm(){
 }
 async function deleteComm(id,name){if(!confirm('Remove "'+name+'" from featured?'))return;try{await db.collection('featured_communities').doc(id).delete();loadAdminComm();}catch(e){alert('Delete failed.');}}
 
+/* ── Default featured communities ──
+   Renders when Firestore has no featured_communities documents,
+   so the homepage never shows an empty section. Images are the
+   real community photographs already in /images. */
+const DEFAULT_COMMUNITY_CARDS = [
+  {name:'North Myrtle Beach', tag:'Oceanfront & Golf', slug:'north-myrtle-beach', image:'images/nmb-beach-drone.jpg'},
+  {name:'Carolina Forest', tag:'Amenity Communities', slug:'carolina-forest', image:'images/waterbridge-entrance.jpg'},
+  {name:'Myrtle Beach', tag:'Coastal Living', slug:'myrtle-beach', image:'images/indigo-bay-sign.jpg'},
+  {name:'Little River', tag:'Waterway & Marina', slug:'little-river', image:'images/little-river-1.jpg'},
+  {name:'Barefoot Resort', tag:'Championship Golf', slug:'north-myrtle-beach', image:'images/barefoot-drone.jpg'},
+  {name:'Plantation Lakes', tag:'Lakefront Living', slug:'carolina-forest', image:'images/plantation-lakes-home-1.jpg'}
+].map(p=>`<div class="comm-card" onclick="showCommunity('${p.slug}')"><div class="comm-bg" style="background-image:url('${p.image}')"></div><div class="comm-info"><div class="comm-name">${p.name}</div><span class="comm-tag">${p.tag}</span><button class="comm-explore">Explore →</button></div></div>`).join('');
+
 /* ── Front-end: Load featured communities ── */
 async function loadCommunities(){
   try{
     const snap=await db.collection('featured_communities').orderBy('order').get();
     const grid=document.getElementById('commGrid');
-    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">Featured communities coming soon.</p>';return;}
+    if(snap.empty){grid.innerHTML=DEFAULT_COMMUNITY_CARDS;return;}
     grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="comm-card${p.large?' large':''}" onclick="showCommunity('${p.slug}')"><div class="comm-bg" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div><div class="comm-info"><div class="comm-name">${p.name}</div><span class="comm-tag">${p.tag||''}</span><button class="comm-explore">Explore →</button></div></div>`;}).join('');
-  }catch(e){console.error('Communities load error:',e);}
+  }catch(e){console.error('Communities load error:',e);
+    const g=document.getElementById('commGrid');if(g&&!g.children.length)g.innerHTML=DEFAULT_COMMUNITY_CARDS;}
 }
 
 /* ══════════════════════════════════════════
@@ -5592,6 +5609,28 @@ function closePrivacy(){
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', ev => { if(ev.key === 'Escape'){ closeGuide(); closePrivacy(); } });
+
+/* ══════════════════════════════════════════
+   EMPTY SECTION GUARD
+   Any content section whose Firestore-driven grid
+   renders no items is hidden rather than left as a
+   blank band on the page. Sections reappear
+   automatically once content is published.
+══════════════════════════════════════════ */
+function hideEmptySections(){
+  [['ohGrid','.oh-sec'],['agentsGrid','.agents-sec'],['testGrid','.test-sec'],['listGrid','.list-sec']]
+  .forEach(([gridId, secSel])=>{
+    const grid=document.getElementById(gridId);
+    if(!grid)return;
+    const sec=grid.closest(secSel)||grid.closest('section');
+    if(!sec)return;
+    const hasCards=grid.querySelectorAll(':scope > div, :scope > article, :scope > a').length>0;
+    sec.style.display = hasCards ? '' : 'none';
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  [1200,2500,5000].forEach(t=>setTimeout(hideEmptySections,t));
+});
 </script>
 <!-- Share toast -->
 <div class="share-toast" id="shareToast"></div>
